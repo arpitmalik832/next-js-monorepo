@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Document Component renders components in correct order 1`] = `
+<div>
+  <div
+    data-testid="mock-html"
+  >
+    <div
+      data-testid="mock-head"
+      data-type="head"
+    />
+  </div>
+</div>
+`;

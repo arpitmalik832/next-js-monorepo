@@ -1,0 +1,41 @@
+{
+  "files": [
+    {
+      "fileName": "assets/icons/lg32/standardAccount.svg.js",
+      "size": 2035,
+      "gzippedSize": 844,
+      "brotliSize": 712,
+      "contentType": "chunk",
+      "percentageBySize": "29.73"
+    },
+    {
+      "fileName": "assets/icons/rg24/systemActionABCKeypad.svg.js",
+      "size": 3285,
+      "gzippedSize": 1443,
+      "brotliSize": 1218,
+      "contentType": "chunk",
+      "percentageBySize": "47.99"
+    },
+    {
+      "fileName": "assets/icons/sm16/systemAdd.svg.js",
+      "size": 1525,
+      "gzippedSize": 723,
+      "brotliSize": 618,
+      "contentType": "chunk",
+      "percentageBySize": "22.28"
+    }
+  ],
+  "totalSize": 6845,
+  "totalGzippedSize": 3010,
+  "totalBrotliSize": 2548,
+  "buildDuration": 103,
+  "noOfFiles": 3,
+  "largestFile": {
+    "fileName": "assets/icons/rg24/systemActionABCKeypad.svg.js",
+    "size": 3285,
+    "gzippedSize": 1443,
+    "brotliSize": 1218,
+    "contentType": "chunk",
+    "percentageBySize": "47.99"
+  }
+}

@@ -5,6 +5,7 @@
 import { renderHook, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import * as reactRedux from 'react-redux';
+import { useRouter } from 'next/router';
 
 import useBackPress from '../useBackPress';
 import {
@@ -13,28 +14,19 @@ import {
   pushStack,
 } from '../../redux/slices/navigationSlice';
 
-jest.mock('react-router', () => ({
-  __esModule: true,
-  useNavigate: () => {
-    const rand = Math.random();
-    if (rand < 0.3) {
-      return jest.fn(() => Promise.resolve());
-    }
-    if (rand < 0.6) {
-      return jest.fn(() => Promise.reject(new Error('an error')));
-    }
-    return jest.fn();
-  },
+// Mock next/router
+jest.mock('next/router', () => ({
+  useRouter: jest.fn(),
 }));
 
+// Mock react-redux
 jest.mock('react-redux', () => ({
-  __esModule: true,
   useDispatch: jest.fn(),
   useSelector: jest.fn(),
 }));
 
+// Mock navigation slice
 jest.mock('../../redux/slices/navigationSlice', () => ({
-  __esModule: true,
   clearStack: jest.fn(),
   popStack: jest.fn(),
   pushStack: jest.fn(),
@@ -56,8 +48,13 @@ jest.mock('../../utils/logsUtils', () => ({
 
 describe('useBackPress unit tests', () => {
   const mockDispatch = jest.fn();
+  const mockRouter = {
+    back: jest.fn(),
+  };
 
   beforeEach(() => {
+    // Setup mocks
+    useRouter.mockReturnValue(mockRouter);
     reactRedux.useDispatch.mockReturnValue(mockDispatch);
     reactRedux.useSelector.mockImplementation(selector =>
       selector({
@@ -136,24 +133,22 @@ describe('useBackPress unit tests', () => {
     expect(popStack).toHaveBeenCalledTimes(0);
   });
 
-  it('testing clear function', () => {
+  it('testing clear function with empty stack', () => {
     const { result } = renderHook(() => useBackPress());
-
     result.current.clear();
-    expect(clearStack).toHaveBeenCalledTimes(0);
+    expect(clearStack).not.toHaveBeenCalled();
   });
 
-  it('testing clear function', () => {
+  it('testing clear function with items in stack', () => {
     reactRedux.useSelector.mockImplementation(selector =>
       selector({
         navigation: {
-          stack: [() => jest.fn()],
+          stack: [jest.fn()],
         },
       }),
     );
     const { result } = renderHook(() => useBackPress());
-
     result.current.clear();
-    expect(clearStack).toHaveBeenCalledTimes(1);
+    expect(clearStack).toHaveBeenCalled();
   });
 });

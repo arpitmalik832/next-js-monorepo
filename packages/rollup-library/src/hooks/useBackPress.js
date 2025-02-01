@@ -14,8 +14,8 @@ import {
   pushStack,
 } from '../redux/slices/navigationSlice';
 import beforeUnload from '../utils/eventListeners/beforeUnload';
-import { errorLog, log } from '../utils/logsUtils';
-import { APP_UNMOUNT, BACK_CLICK } from '../enums/app';
+import { log } from '../utils/logsUtils';
+import { APP_UNMOUNT } from '../enums/app';
 import useIsClient from './useIsClient';
 
 /**
@@ -34,16 +34,7 @@ function useBackPress() {
     if (stack.length) {
       dispatch(popStack());
     } else {
-      const res = router.back();
-      if (res instanceof Promise) {
-        res
-          .then(() => {
-            log(BACK_CLICK.SUCCESS);
-          })
-          .catch(err => {
-            errorLog(BACK_CLICK.ERROR, err);
-          });
-      }
+      router.back();
     }
   }, [stack]);
 

@@ -1,10 +1,48 @@
 {
-  "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
-    "production": ["default"],
-    "sharedGlobals": ["{workspaceRoot}/.github/workflows/*"]
+  "extends": "nx/presets/npm.json",
+  "npmScope": "react-ts-monorepo",
+  "version": "0.0.0",
+  "affected": {
+    "defaultBase": "main"
   },
-  "nxCloudId": "6799c32d686b9147d4871a5f",
-  "plugins": []
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e",
+          "build-storybook"
+        ]
+      }
+    }
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"]
+    },
+    "test": {
+      "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"],
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "{workspaceRoot}/jest.config.js",
+        "setupFile": "{workspaceRoot}/jest.setup.js"
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "lint": {
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+    }
+  },
+  "workspaceLayout": {
+    "appsDir": ["apps", "test-apps"],
+    "libsDir": "packages"
+  }
 }

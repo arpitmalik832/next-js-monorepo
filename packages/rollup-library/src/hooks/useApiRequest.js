@@ -6,7 +6,14 @@ import { handleRequest } from '../utils/apiUtils';
 
 /**
  * Custom hook for making API requests with support for aborting requests.
- * @returns {object} An object containing methods for making GET, POST, PUT, DELETE requests and canceling them.
+ * @returns {{
+ * makeGetCall: (params: {url: string, axiosInstance: AxiosInstance, config?: AxiosRequestConfig}) => Promise,
+ * makePostCall: (params: {url: string, axiosInstance: AxiosInstance, body?: T, config?: AxiosRequestConfig}) => Promise,
+ * makePutCall: (params: {url: string, axiosInstance: AxiosInstance, body?: T, config?: AxiosRequestConfig}) => Promise,
+ * makeDeleteCall: (params: {url: string, axiosInstance: AxiosInstance, config?: AxiosRequestConfig}) => Promise,
+ * cancelRequest: (key: string) => void,
+ * cancelAllRequests: () => void
+ * }} An object containing methods for making GET, POST, PUT, DELETE requests and canceling them.
  * @example
  * const { makeGetCall, cancelRequest } = useApiRequest();
  * makeGetCall({ axiosInstance, url: '/api/data' });

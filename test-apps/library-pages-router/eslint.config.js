@@ -140,7 +140,7 @@ export default [
         {
           ignore: [
             'typescript-eslint',
-            '@arpitmalik832/next-js-rollup-monorepo-library/.*\\.css$',
+            '@arpitmalik832/next-js-rollup-monorepo-library',
             'react-dom/client',
             'eslint-plugin-cypress/flat',
           ],

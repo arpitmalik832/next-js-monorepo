@@ -1,5 +1,5 @@
 {
-  "name": "next_js_webpack_pages_router",
+  "name": "next_js_webpack_app_router",
   "version": "0.0.0",
   "description": "A React JS starter code",
   "sideEffects": false,

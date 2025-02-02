@@ -1,10 +1,8 @@
 {
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "extends": "nx/presets/npm.json",
   "npmScope": "react-ts-monorepo",
   "version": "0.0.0",
-  "affected": {
-    "defaultBase": "main"
-  },
   "tasksRunnerOptions": {
     "default": {
       "runner": "nx/tasks-runners/default",
@@ -15,7 +13,9 @@
           "test",
           "e2e",
           "build-storybook"
-        ]
+        ],
+        "parallel": 1,
+        "maxParallel": 1
       }
     }
   },
@@ -42,7 +42,7 @@
     }
   },
   "workspaceLayout": {
-    "appsDir": ["apps", "test-apps"],
+    "appsDir": "apps",
     "libsDir": "packages"
   }
 }

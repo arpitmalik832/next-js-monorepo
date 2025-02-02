@@ -7,7 +7,7 @@ import '@testing-library/jest-dom';
 import * as reactRedux from 'react-redux';
 import { useRouter } from 'next/navigation';
 
-import useBackPress from '../usePagesBackPress';
+import useBackPress from '../useAppBackPress';
 import {
   clearStack,
   popStack,
@@ -15,7 +15,7 @@ import {
 } from '../../redux/slices/navigationSlice';
 
 // Mock next/router
-jest.mock('next/router', () => ({
+jest.mock('next/navigation', () => ({
   useRouter: jest.fn(),
 }));
 
@@ -50,6 +50,8 @@ describe('useBackPress unit tests', () => {
   const mockDispatch = jest.fn();
   const mockRouter = {
     back: jest.fn(),
+    push: jest.fn(),
+    // Add any other router methods you use in your hook
   };
 
   beforeEach(() => {

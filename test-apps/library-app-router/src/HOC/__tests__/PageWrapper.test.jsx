@@ -9,7 +9,7 @@ import { log } from '@arpitmalik832/next-js-rollup-monorepo-library';
 import PageWrapper from '../PageWrapper';
 
 // Mock the react-router dependencies
-jest.mock('next/router', () => ({
+jest.mock('next/navigation', () => ({
   __esModule: true,
   ...jest.requireActual('next/router'),
   useRouter: () => ({}),

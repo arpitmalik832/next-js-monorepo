@@ -7,7 +7,7 @@ import '@testing-library/jest-dom';
 import {
   ReduxProvider,
   log,
-  useBackPress,
+  usePagesBackPress,
 } from '@arpitmalik832/next-js-rollup-monorepo-library';
 import { configureStore, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
@@ -23,7 +23,7 @@ jest.mock('@arpitmalik832/next-js-rollup-monorepo-library', () => ({
   __esModule: true,
   ...jest.requireActual('@arpitmalik832/next-js-rollup-monorepo-library'),
   log: jest.fn(),
-  useBackPress: jest.fn(),
+  usePagesBackPress: jest.fn(),
 }));
 
 // Mock the custom Button component
@@ -62,7 +62,7 @@ describe('Home Page Tests', () => {
     // Import and mock the query directly
     useFetchDataQuery.mockReturnValue(mockQueryData);
 
-    // Create a slice for apis
+    // Create a slice for apis and navigation
     const apisSlice = createSlice({
       name: 'apis',
       initialState: [
@@ -127,7 +127,7 @@ describe('Home Page Tests', () => {
   it('initializes with useBackPress hook', () => {
     renderComponent();
 
-    expect(useBackPress).toHaveBeenCalled();
+    expect(usePagesBackPress).toHaveBeenCalled();
   });
 
   it('matches snapshot', () => {

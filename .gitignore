@@ -75,8 +75,8 @@ yarn-error.log*
 next-env.d.ts
 
 # cypress
-cypress/screenshots
-cypress/videos
+**/cypress/screenshots
+**/cypress/videos
 
 # storybook
-storybook-static
+**/storybook-static

@@ -3,7 +3,7 @@
  * @file This file is saved as `Home/index.jsx`.
  */
 import {
-  useBackPress,
+  usePagesBackPress,
   log,
   useIsClient,
 } from '@arpitmalik832/next-js-rollup-monorepo-library';
@@ -25,7 +25,7 @@ function Home() {
   const apis = useSelector(state => state.apis);
   const isClient = useIsClient();
 
-  useBackPress();
+  usePagesBackPress();
   const { data, isLoading, isError } = useFetchDataQuery(
     apis[0]?.axiosInstance,
     {

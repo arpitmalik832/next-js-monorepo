@@ -1,5 +1,3 @@
-'use client';
-
 /**
  * Base query for making get requests.
  * @file This file is saved as `baseQuery.js`.

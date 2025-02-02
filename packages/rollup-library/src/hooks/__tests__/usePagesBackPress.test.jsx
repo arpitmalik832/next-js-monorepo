@@ -7,7 +7,7 @@ import '@testing-library/jest-dom';
 import * as reactRedux from 'react-redux';
 import { useRouter } from 'next/router';
 
-import useBackPress from '../useBackPress';
+import useBackPress from '../usePagesBackPress';
 import {
   clearStack,
   popStack,

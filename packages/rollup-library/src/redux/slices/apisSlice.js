@@ -1,5 +1,3 @@
-'use client';
-
 /**
  * Contains the apis slice.
  * @file This file is saved as `apisSlice.js`.

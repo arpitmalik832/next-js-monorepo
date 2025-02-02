@@ -1,5 +1,3 @@
-'use client';
-
 /**
  * Contains the app slice.
  * @file This file is saved as `appSlice.js`.

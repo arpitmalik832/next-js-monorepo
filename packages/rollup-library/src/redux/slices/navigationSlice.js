@@ -1,5 +1,3 @@
-'use client';
-
 /**
  * Contains the navigation slice.
  * @file This file is saved as `navigationSlice.js`.

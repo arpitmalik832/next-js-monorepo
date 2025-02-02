@@ -1,12 +1,10 @@
-'use client';
-
 /**
  * This hook handles back press in the application.
  * @file It is saved as `useBackPress.js`.
  */
 import { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 import {
   clearStack,
@@ -20,7 +18,12 @@ import useIsClient from './useIsClient';
 
 /**
  * Custom hook to handle back press events in the application.
- * @returns {object} An object containing the stack and methods to manipulate it.
+ * @returns {{
+ * stack: Function[],
+ * push: (callback: Function) => void,
+ * pop: () => void,
+ * clear: () => void,
+ * }} An object containing the stack and methods to manipulate it.
  * @example
  * const { stack, push, pop, clear } = useBackPress();
  */

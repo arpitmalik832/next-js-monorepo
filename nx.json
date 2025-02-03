@@ -9,10 +9,14 @@
       "options": {
         "cacheableOperations": [
           "build",
+          "build:beta",
+          "build:prod",
+          "e2e-run",
+          "e2e-run:pre-commit",
+          "knip:prod:check-files",
           "lint",
-          "test",
-          "e2e",
-          "build-storybook"
+          "lint:fix",
+          "storybook:build:prod"
         ],
         "parallel": 1,
         "maxParallel": 1

@@ -143,4 +143,4 @@ function useApiCall({
   return { isLoading, data, isError, error };
 }
 
-export { useApiCall };
+export default useApiCall;

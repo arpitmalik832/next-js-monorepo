@@ -4,19 +4,19 @@ on:
   workflow_dispatch:
     inputs:
       version_bump_type:
-        description: "Version bump type (patch, minor, major)"
+        description: 'Version bump type (patch, minor, major)'
         required: true
-        default: "patch"
-        type: "choice"
+        default: 'patch'
+        type: 'choice'
         options:
           - patch
           - minor
           - major
       release_type:
-        description: "Release type (release, alpha, beta, rc)"
+        description: 'Release type (release, alpha, beta, rc)'
         required: true
-        default: "alpha"
-        type: "choice"
+        default: 'alpha'
+        type: 'choice'
         options:
           - release
           - alpha
@@ -42,7 +42,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: "pnpm"
+          cache: 'pnpm'
       - name: Configure Git
         run: |
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git

@@ -10,7 +10,7 @@ import { ReactComponent as ReactIcon } from '../../../assets/images/react.svg';
 import useHome from '../../../hooks/useHome';
 
 /**
- * Thise function defines the Home client page.
+ * This function defines the Home client page.
  * @returns {import('react').ReactNode} - Returns the Home client page.
  * @example
  * <HomeClient />

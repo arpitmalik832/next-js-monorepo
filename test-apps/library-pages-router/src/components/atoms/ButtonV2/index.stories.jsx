@@ -8,7 +8,7 @@ import Button from '../Button';
 import store from '../../../redux/store/store';
 
 export default {
-  title: 'Atoms/Button',
+  title: 'Atoms/ButtonV2',
   component: () => (
     <ReduxProvider store={store}>
       <Button />

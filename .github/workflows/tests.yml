@@ -8,7 +8,7 @@ on:
       - beta
       - release
       - master
-      - "feature-*"
+      - 'feature-*'
 
 env:
   PNPM_VERSION: 10.0.0-beta.1
@@ -27,7 +27,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: "pnpm"
+          cache: 'pnpm'
       - name: Authenticating with GitHub Packages
         run: |
           # First find and update all .npmrc files recursively
@@ -55,7 +55,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: "pnpm"
+          cache: 'pnpm'
       - name: Authenticating with GitHub Packages
         run: |
           # First find and update all .npmrc files recursively
@@ -83,7 +83,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: "pnpm"
+          cache: 'pnpm'
       - name: Authenticating with GitHub Packages
         run: |
           # First find and update all .npmrc files recursively
@@ -97,6 +97,8 @@ jobs:
           echo "Added token to global .npmrc"
       - name: Installing dependencies
         run: pnpm install --frozen-lockfile
+      - name: Building Library
+        run: pnpm build:prod
       - name: Running lint
         run: pnpm lint
   unit-tests:
@@ -111,7 +113,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: "pnpm"
+          cache: 'pnpm'
       - name: Authenticating with GitHub Packages
         run: |
           # First find and update all .npmrc files recursively
@@ -125,6 +127,8 @@ jobs:
           echo "Added token to global .npmrc"
       - name: Installing dependencies
         run: pnpm install --frozen-lockfile
+      - name: Building Library
+        run: pnpm build:prod
       - name: Running unit tests
         run: pnpm test:coverage
   e2e-tests:
@@ -139,7 +143,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: "pnpm"
+          cache: 'pnpm'
       - name: Authenticating with GitHub Packages
         run: |
           # First find and update all .npmrc files recursively
@@ -169,7 +173,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: "pnpm"
+          cache: 'pnpm'
       - name: Authenticating with GitHub Packages
         run: |
           # First find and update all .npmrc files recursively
@@ -197,7 +201,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: "pnpm"
+          cache: 'pnpm'
       - name: Authenticating with GitHub Packages
         run: |
           # First find and update all .npmrc files recursively
@@ -211,6 +215,8 @@ jobs:
           echo "Added token to global .npmrc"
       - name: Installing dependencies
         run: pnpm install --frozen-lockfile
+      - name: Building Library
+        run: pnpm build:prod
       - name: Building the storybook
         run: pnpm storybook:build:prod
   bundle-watch:
@@ -225,7 +231,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: "pnpm"
+          cache: 'pnpm'
       - name: Authenticating with GitHub Packages
         run: |
           # First find and update all .npmrc files recursively

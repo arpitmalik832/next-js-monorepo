@@ -1,23 +1,23 @@
-name: Publish Vite Library
+name: Publish Rollup Flow Library
 
 on:
   workflow_dispatch:
     inputs:
       release_type:
-        description: "Release type (release, alpha, beta, rc)"
+        description: 'Release type (release, alpha, beta, rc)'
         required: true
-        default: "alpha"
-        type: "choice"
+        default: 'alpha'
+        type: 'choice'
         options:
           - release
           - alpha
           - beta
           - rc
       build_type:
-        description: "Build type (prod, beta, stage)"
+        description: 'Build type (prod, beta, stage)'
         required: true
-        default: "prod"
-        type: "choice"
+        default: 'prod'
+        type: 'choice'
         options:
           - prod
           - beta
@@ -28,7 +28,7 @@ env:
   NODE_VERSION: 22
 
 jobs:
-  publish-vite-library:
+  publish-rollup-flow-library:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -42,7 +42,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: "pnpm"
+          cache: 'pnpm'
       - name: Configure Git
         run: |
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git
@@ -62,7 +62,7 @@ jobs:
       - name: Installing dependencies
         run: pnpm install --frozen-lockfile
       - name: Publishing the library package
-        working-directory: packages/vite-library
+        working-directory: packages/rollup-flow-library
         run: |
           git status
           git stash pop
@@ -76,5 +76,5 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: Output package details
-        working-directory: packages/vite-library
+        working-directory: packages/rollup-flow-library
         run: cat package.json

@@ -1,97 +1,55 @@
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "weekly"
-    target-branch: "feature-dependabot"
+      interval: 'weekly'
+    target-branch: 'feature-dependabot'
 
-  - package-ecosystem: "npm"
-    directory: "/apps/rollup-library-docs"
+  - package-ecosystem: 'npm'
+    directory: '/apps/app-router'
     schedule:
-      interval: "weekly"
-    target-branch: "feature-dependabot"
+      interval: 'weekly'
+    target-branch: 'feature-dependabot'
 
-  - package-ecosystem: "npm"
-    directory: "/apps/webpack"
+  - package-ecosystem: 'npm'
+    directory: '/apps/pages-router'
     schedule:
-      interval: "weekly"
-    target-branch: "feature-dependabot"
+      interval: 'weekly'
+    target-branch: 'feature-dependabot'
 
-  - package-ecosystem: "npm"
-    directory: "/apps/webpack-swc"
+  - package-ecosystem: 'npm'
+    directory: '/packages/rollup-library'
     schedule:
-      interval: "weekly"
-    target-branch: "feature-dependabot"
+      interval: 'weekly'
+    target-branch: 'feature-dependabot'
 
-  - package-ecosystem: "npm"
-    directory: "/apps/vite"
+  - package-ecosystem: 'npm'
+    directory: '/packages/rollup-flow-library'
     schedule:
-      interval: "weekly"
-    target-branch: "feature-dependabot"
+      interval: 'weekly'
+    target-branch: 'feature-dependabot'
 
-  - package-ecosystem: "npm"
-    directory: "/apps/vite-swc"
+  - package-ecosystem: 'npm'
+    directory: '/test-apps/rollup-library-app-router'
     schedule:
-      interval: "weekly"
-    target-branch: "feature-dependabot"
+      interval: 'weekly'
+    target-branch: 'feature-dependabot'
 
-  - package-ecosystem: "npm"
-    directory: "/packages/rollup-library"
+  - package-ecosystem: 'npm'
+    directory: '/test-apps/rollup-library-pages-test'
     schedule:
-      interval: "weekly"
-    target-branch: "feature-dependabot"
+      interval: 'weekly'
+    target-branch: 'feature-dependabot'
 
-  - package-ecosystem: "npm"
-    directory: "/packages/rollup-swc-library"
+  - package-ecosystem: 'npm'
+    directory: '/test-apps/rollup-flow-library-app-router'
     schedule:
-      interval: "weekly"
-    target-branch: "feature-dependabot"
+      interval: 'weekly'
+    target-branch: 'feature-dependabot'
 
-  - package-ecosystem: "npm"
-    directory: "/packages/vite-library"
+  - package-ecosystem: 'npm'
+    directory: '/test-apps/rollup-flow-library-pages-router'
     schedule:
-      interval: "weekly"
-    target-branch: "feature-dependabot"
-
-  - package-ecosystem: "npm"
-    directory: "/packages/vite-swc-library"
-    schedule:
-      interval: "weekly"
-    target-branch: "feature-dependabot"
-
-  - package-ecosystem: "npm"
-    directory: "/test-apps/rollup-library-test"
-    schedule:
-      interval: "weekly"
-    target-branch: "feature-dependabot"
-
-  - package-ecosystem: "npm"
-    directory: "/test-apps/rollup-swc-library-test"
-    schedule:
-      interval: "weekly"
-    target-branch: "feature-dependabot"
-
-  - package-ecosystem: "npm"
-    directory: "/test-apps/vite-library-test"
-    schedule:
-      interval: "weekly"
-    target-branch: "feature-dependabot"
-
-  - package-ecosystem: "npm"
-    directory: "/test-apps/vite-swc-library-test"
-    schedule:
-      interval: "weekly"
-    target-branch: "feature-dependabot"
-
-  - package-ecosystem: "npm"
-    directory: "/test-apps/webpack-test"
-    schedule:
-      interval: "weekly"
-    target-branch: "feature-dependabot"
-
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    target-branch: "feature-dependabot"
+      interval: 'weekly'
+    target-branch: 'feature-dependabot'

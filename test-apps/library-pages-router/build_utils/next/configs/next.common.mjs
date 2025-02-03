@@ -43,8 +43,6 @@ const nextConfig = {
       },
     };
 
-    newConfig.devtool = isRelease || isBeta ? false : 'source-map';
-
     newConfig.performance = {
       hints: isRelease || isBeta ? 'error' : 'warning',
       maxAssetSize: 250000,

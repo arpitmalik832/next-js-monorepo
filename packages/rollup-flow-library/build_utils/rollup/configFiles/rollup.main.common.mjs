@@ -13,7 +13,6 @@ import json from '@rollup/plugin-json';
 import progress from 'rollup-plugin-progress';
 
 import svgrConfig from '../../../svgr.config.mjs';
-import importStyles from '../customPlugins/importStyles.mjs';
 import stripCustomWindowVariables from '../customPlugins/stripCustomWindowVariables.mjs';
 import { ENVS } from '../../config/index.mjs';
 import {
@@ -64,7 +63,6 @@ const config = {
     url(),
     svgr(svgrConfig),
     json(),
-    importStyles(),
     progress(),
   ],
 };

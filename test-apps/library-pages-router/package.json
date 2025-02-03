@@ -1,5 +1,5 @@
 {
-  "name": "next_js_webpack_pages_router",
+  "name": "library_pages_router",
   "version": "0.0.0",
   "description": "A React JS starter code",
   "sideEffects": false,
@@ -8,7 +8,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/arpitmalik832/next-js-webpack-approuter"
+    "url": "https://github.com/arpitmalik832/next-js-monorepo"
   },
   "engines": {
     "node": ">=20.17.0"

@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "extends": "nx/presets/npm.json",
-  "npmScope": "react-ts-monorepo",
+  "npmScope": "next-js-monorepo",
   "version": "0.0.0",
   "tasksRunnerOptions": {
     "default": {
@@ -16,7 +16,10 @@
           "knip:prod:check-files",
           "lint",
           "lint:fix",
-          "storybook:build:prod"
+          "storybook:build:prod",
+          "test",
+          "test:coverage",
+          "test:coverage:silent:quick"
         ],
         "parallel": 1,
         "maxParallel": 1

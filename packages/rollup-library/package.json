@@ -136,7 +136,7 @@
     "version-bump:major:rc": "npx release-it major prerelease --preRelease=rc --ci"
   },
   "devDependencies": {
-    "@babel/core": "^7.26.0",
+    "@babel/core": "^7.26.8",
     "@babel/eslint-parser": "^7.26.5",
     "@babel/generator": "^7.26.5",
     "@babel/parser": "^7.26.5",
